@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-const Stopwatch = () => {
-    const [time, setTime] = useState(0);
-    const [isRunning, setIsRunning] = useState(false);
-    const [hasStarted, setHasStarted] = useState(false);
+const Stopwatch = () => {
+    const [time, setTime] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
+    const [hasStarted, setHasStarted] = useState(false);
 
-    useEffect(() => {
-        let interval;
+    useEffect(() => {
+        let interval;
         if (isRunning) {
             interval = setInterval(() => {
                 setTime((prevTime) => prevTime + 1);
