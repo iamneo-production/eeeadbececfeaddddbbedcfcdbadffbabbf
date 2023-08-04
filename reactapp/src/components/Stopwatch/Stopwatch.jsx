@@ -15,27 +15,27 @@ const Stopwatch = () => {
         return () => clearInterval(interval);
     }, [isRunning]);
 
-    const handleStart = () => {
-        setIsRunning(true);
-        setHasStarted(true);
-    };
+    const handleStart = () => {
+        setIsRunning(true);
+        setHasStarted(true);
+    };
 
-    const handlePause = () => {
-        setIsRunning(false);
-    };
+    const handlePause = () => {
+        setIsRunning(false);
+    };
 
-    const handleResume = () => {
-        setIsRunning(true);
-    };
+    const handleResume = () => {
+        setIsRunning(true);
+    };
 
-    const handleReset = () => {
-        setIsRunning(false);
-        setTime(0);
-        setHasStarted(false);
-    };
+    const handleReset = () => {
+        setIsRunning(false);
+        setTime(0);
+        setHasStarted(false);
+    };
 
-    return (
-        <div className="watchContainer">
+    return (
+        <div className="watchContainer">
             <h1> React Stopwatch </h1>
             <p id="time" data-testid="time">{new Date(time * 1000).toISOString().substr(11, 8)}</p>
             {!hasStarted ? (
@@ -63,11 +63,11 @@ const Stopwatch = () => {
                     </button>
                     <button id="reset" data-testid="reset" onClick={handleReset}>
                         Reset
-                    </button>
-                </div>
-            )}
-        </div>
-    );
+                    </button>
+                </div>
+            )}
+        </div>
+    );
 };
 
-export default Stopwatch;
+export default Stopwatch;
