@@ -60,9 +60,9 @@ const Stopwatch = () => {
                 <div className="buttonContainer">
                     <button id="resume" data-testid="resume" onClick={handleResume}>
                         Resume
-                        </button>
-                    <button id="reset" data-testid="reset" onClick={handleReset}>
-                        Reset
+                    </button>
+                    <button id="reset" data-testid="reset" onClick={handleReset}>
+                        Reset
                     </button>
                 </div>
             )}
