@@ -1,6 +1,6 @@
 
 
-//export default App;
+
 
 import Stopwatch from "./components/Stopwatch/Stopwatch";
 import './App.css';
