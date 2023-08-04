@@ -47,21 +47,21 @@ const Stopwatch = () => {
                         Reset
                     </button>
                 </div>
-            ) : isRunning ? (
-                <div className="buttonContainer">
-                    <button id="pause" data-testid="pause" onClick={handlePause}>
-                        Pause
-                    </button>
-                    <button id="reset" data-testid="reset" onClick={handleReset}>
-                        Reset
-                    </button>
-                </div>
-            ) : (
-                <div className="buttonContainer">
-                    <button id="resume" data-testid="resume" onClick={handleResume}>
-                        Resume
-                    </button>
-                    <button id="reset" data-testid="reset" onClick={handleReset}>
+            ) : isRunning ? (
+                <div className="buttonContainer">
+                    <button id="pause" data-testid="pause" onClick={handlePause}>
+                        Pause
+                    </button>
+                    <button id="reset" data-testid="reset" onClick={handleReset}>
+                        Reset
+                    </button>
+                </div>
+            ) : (
+                <div className="buttonContainer">
+                    <button id="resume" data-testid="resume" onClick={handleResume}>
+                        Resume
+                        </button>
+                    <button id="reset" data-testid="reset" onClick={handleReset}>
                         Reset
                     </button>
                 </div>
