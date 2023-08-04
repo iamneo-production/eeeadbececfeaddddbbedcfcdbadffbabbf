@@ -6,16 +6,16 @@ const Stopwatch = () => {
     const [hasStarted, setHasStarted] = useState(false);
 
     useEffect(() => {
-        let interval;
-        if (isRunning) {
-            interval = setInterval(() => {
-                setTime((prevTime) => prevTime + 1);
-            }, 1000);
-        }
-        return () => clearInterval(interval);
-    }, [isRunning]);
+        let interval;
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTime((prevTime) => prevTime + 1);
+            }, 1000);
+        }
+        return () => clearInterval(interval);
+    }, [isRunning]);
 
-    const handleStart = () => {
+    const handleStart = () => {
         setIsRunning(true);
         setHasStarted(true);
     };
