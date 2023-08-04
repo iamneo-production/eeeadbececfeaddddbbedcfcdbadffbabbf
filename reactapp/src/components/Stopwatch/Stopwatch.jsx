@@ -36,18 +36,18 @@ const Stopwatch = () => {
 
     return (
         <div className="watchContainer">
-            <h1> React Stopwatch </h1>
-            <p id="time" data-testid="time">{new Date(time * 1000).toISOString().substr(11, 8)}</p>
-            {!hasStarted ? (
-                <div className="buttonContainer">
-                    <button id="start" data-testid="start" onClick={handleStart}>
-                        Start
-                    </button>
-                    <button id="reset" data-testid="reset" onClick={handleReset} disabled>
-                        Reset
-                    </button>
-                </div>
-            ) : isRunning ? (
+            <h1> React Stopwatch </h1>
+            <p id="time" data-testid="time">{new Date(time * 1000).toISOString().substr(11, 8)}</p>
+            {!hasStarted ? (
+                <div className="buttonContainer">
+                    <button id="start" data-testid="start" onClick={handleStart}>
+                        Start
+                    </button>
+                    <button id="reset" data-testid="reset" onClick={handleReset} disabled>
+                        Reset
+                    </button>
+                </div>
+            ) : isRunning ? (
                 <div className="buttonContainer">
                     <button id="pause" data-testid="pause" onClick={handlePause}>
                         Pause
