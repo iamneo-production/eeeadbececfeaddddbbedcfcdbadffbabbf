@@ -35,26 +35,26 @@ function Stopwatch() {
   };
 
   const handleButton1Click = () => {
-    if (button1State === "start") {
-      setButton1State("pause");
-      setButton2State("reset");
+    if (button1State === "Start") {
+      setButton1State("Pause");
+      setButton2State("Reset");
       startTimer();
-    } else if (button1State === "pause") {
-      setButton1State("resume");
-      setButton2State("reset");
+    } else if (button1State === "Pause") {
+      setButton1State("Resume");
+      setButton2State("Reset");
       pauseTimer();
-    } else if (button1State === "resume") {
-      setButton1State("pause");
-      setButton2State("reset");
+    } else if (button1State === "Resume") {
+      setButton1State("Pause");
+      setButton2State("Reset");
       startTimer();
     }
   };
 
   const handleButton2Click = () => {
-    if (button1State === "pause" || button1State === "resume") {
+    if (button1State === "Pause" || button1State === "Resume") {
       resetTimer();
-      setButton1State("start")
-      setButton2State("reset");
+      setButton1State("Start")
+      setButton2State("Reset");
       pauseTimer();
     }
   };
@@ -67,11 +67,11 @@ function Stopwatch() {
           {`${time.hours.toString().padStart(2, "0")} : ${time.minutes.toString().padStart(2, "0")} : ${time.seconds.toString().padStart(2, "0")}`}
         </p>
         <button onClick={handleButton1Click} data-testid="button" className="button">
-          {button1State === "start" && "start"}
-          {button1State === "pause" && "pause"}
-          {button1State === "resume" && "resume"}
+          {button1State === "Start" && "Start"}
+          {button1State === "Pause" && "Pause"}
+          {button1State === "Resume" && "Resume"}
         </button>
-        <button onClick={handleButton2Click} disabled={button1State === "start"} data-testid="button" className="button">
+        <button onClick={handleButton2Click} disabled={button1State === "Start"} data-testid="button" className="button">
           {button2State === "Reset" && "Reset"}
         </button>
       </p>
