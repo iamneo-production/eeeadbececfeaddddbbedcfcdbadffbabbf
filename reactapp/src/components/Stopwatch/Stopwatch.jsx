@@ -3,8 +3,8 @@ import React, { useState } from "react";
 function Stopwatch() {
   const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
   const [intervalId, setIntervalId] = useState(null);
-  const [button1State, setButton1State] = useState("start");
-  const [button2State, setButton2State] = useState("reset");
+  const [button1State, setButton1State] = useState("Start");
+  const [button2State, setButton2State] = useState("Reset");
 
   const startTimer = () => {
     const id = setInterval(() => {
