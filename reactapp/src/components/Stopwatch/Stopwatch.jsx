@@ -3,8 +3,8 @@ import React, { useState } from "react";
 function Stopwatch() {
   const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
   const [intervalId, setIntervalId] = useState(null);
-  const [button1State, setButton1State] = useState("Start");
-  const [button2State, setButton2State] = useState("Reset");
+  const [button1State, setButton1State] = useState("start");
+  const [button2State, setButton2State] = useState("reset");
 
   const startTimer = () => {
     const id = setInterval(() => {
@@ -35,26 +35,26 @@ function Stopwatch() {
   };
 
   const handleButton1Click = () => {
-    if (button1State === "Start") {
-      setButton1State("Pause");
-      setButton2State("Reset");
+    if (button1State === "start") {
+      setButton1State("pause");
+      setButton2State("reset");
       startTimer();
-    } else if (button1State === "Pause") {
-      setButton1State("Resume");
-      setButton2State("Reset");
+    } else if (button1State === "pause") {
+      setButton1State("resume");
+      setButton2State("reset");
       pauseTimer();
-    } else if (button1State === "Resume") {
-      setButton1State("Pause");
-      setButton2State("Reset");
+    } else if (button1State === "resume") {
+      setButton1State("pause");
+      setButton2State("reset");
       startTimer();
     }
   };
 
   const handleButton2Click = () => {
-    if (button1State === "Pause" || button1State === "Resume") {
+    if (button1State === "pause" || button1State === "resume") {
       resetTimer();
-      setButton1State("Start")
-      setButton2State("Reset");
+      setButton1State("start")
+      setButton2State("reset");
       pauseTimer();
     }
   };
@@ -67,11 +67,11 @@ function Stopwatch() {
           {`${time.hours.toString().padStart(2, "0")} : ${time.minutes.toString().padStart(2, "0")} : ${time.seconds.toString().padStart(2, "0")}`}
         </p>
         <button onClick={handleButton1Click} data-testid="button" className="button">
-          {button1State === "Start" && "Start"}
-          {button1State === "Pause" && "Pause"}
-          {button1State === "Resume" && "Resume"}
+          {button1State === "start" && "start"}
+          {button1State === "pause" && "pause"}
+          {button1State === "resume" && "resume"}
         </button>
-        <button onClick={handleButton2Click} disabled={button1State === "Start"} data-testid="button" className="button">
+        <button onClick={handleButton2Click} disabled={button1State === "start"} data-testid="button" className="button">
           {button2State === "Reset" && "Reset"}
         </button>
       </p>
